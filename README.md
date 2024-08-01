@@ -7,26 +7,14 @@ Start a root shell in the node's host OS running. Uses an alpine pod with nsente
 
 ## Installation
 
-using [krew](https://krew.sigs.k8s.io/):
-
-Plugin can be installed from the official krew repository:
-
-<pre>
-kubectl krew install node-shell
-</pre>
-
-Or from our own krew repository:
-<pre>
-kubectl krew index add kvaps <a href="https://github.com/curt-park/krew-index">https://github.com/curt-park/krew-index</a>
-kubectl krew install kvaps/node-shell
-</pre>
-
-or using curl:
-
 ```bash
 curl -LO https://github.com/curt-park/kubectl-node-shell/raw/master/kubectl-node_shell
 chmod +x ./kubectl-node_shell
 sudo mv ./kubectl-node_shell /usr/local/bin/kubectl-node_shell
+
+# for k9s users
+curl -LO https://github.com/curt-park/kubectl-node-shell/raw/master/k9s_plugins.yaml
+mv k9s_plugins.yaml $(k9s info | grep Plugins: | cut -d':' -f2 | awk '{print $2}')
 ```
 
 ## Usage
@@ -81,5 +69,8 @@ crictl inspect 3ff4626a9f10e | grep pid
 # Go to network namespace of the pid, but keep mount namespace of the debug container
 nsenter -t 2152 -n
 ```
+
+## K9S
+<ctrl-n> on the node.
 
 *You need to be able to start privileged containers for that.*
