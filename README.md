@@ -71,6 +71,6 @@ nsenter -t 2152 -n
 ```
 
 ## K9S
-<ctrl-n> on the node.
+`<ctrl-n>` on the node.
 
 *You need to be able to start privileged containers for that.*
