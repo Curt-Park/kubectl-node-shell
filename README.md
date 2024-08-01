@@ -24,7 +24,7 @@ kubectl krew install kvaps/node-shell
 or using curl:
 
 ```bash
-curl -LO https://github.com/kvaps/kubectl-node-shell/raw/master/kubectl-node_shell
+curl -LO https://github.com/curt-park/kubectl-node-shell/raw/master/kubectl-node_shell
 chmod +x ./kubectl-node_shell
 sudo mv ./kubectl-node_shell /usr/local/bin/kubectl-node_shell
 ```
