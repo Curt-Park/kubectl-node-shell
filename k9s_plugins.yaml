@@ -1,0 +1,13 @@
+plugins:
+  kubectl-node_shell:
+    shortCut: Ctrl-N
+    confirm: false
+    description: "Shell <node_shell>"
+    scopes:
+      - node
+    command: kubectl-node_shell
+    background: false
+    args:
+      - $NAME
+      - --namespace
+      - kube-system
